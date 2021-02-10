@@ -10,8 +10,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,14 +34,14 @@ import com.google.firebase.storage.UploadTask;
 public class RegistrationActivity extends AppCompatActivity {
     EditText et_Name,et_Email,et_Pass,et_Phone,et_Qualification,et_Address,et_experties,et_Charges;
     String Name, Email, Password, Phone,Qulification, Address, experties, charges;
-
+   // String Subjects ;
     String profle_url;
 
     private FirebaseAuth fireauth;
     ImageView profile_Picture;
 
     public Uri imageUri;
-
+    Spinner subjectSpinner;
     private FirebaseStorage storage;
     private StorageReference mReference;
     private DatabaseReference mDatabaseRef;
@@ -46,6 +49,12 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        /*subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegistrationActivity.this
+                    , android.R.layout.simple_dropdown_item_1line,getResources().getStringArray(R.array.Subjects));
+                   myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                     subjectSpinner.setAdapter(myAdapter);
+        Subjects = (String) subjectSpinner.getSelectedItem().toString();*/
         init();
     }
     private void init() {
@@ -62,6 +71,8 @@ public class RegistrationActivity extends AppCompatActivity {
         profile_Picture = findViewById(R.id.Detail_profile_Picture);
         storage = FirebaseStorage.getInstance();
         mReference = storage.getReference().child("RegisterUser");
+        //mReference = storage.getReference().child(Subjects);
+
 
     }
     public void SignUp(View v) {
@@ -130,10 +141,56 @@ public class RegistrationActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Please choose an image.....!", Toast.LENGTH_SHORT).show();
         }
-        else
+       /* else if(Subjects.equals("subjects"))
         {
+            Toast.makeText(this, "Please Select any subject.....!", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("Maths"))
+        {
+            Subjects = "Maths";
+            Toast.makeText(this, "Maths", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("Physics"))
+        {
+            Subjects = "Physics";
+            Toast.makeText(this, "Physics", Toast.LENGTH_SHORT).show();
+
+        } else if (subjectSpinner.getSelectedItem().toString().trim().equals("Chemistry"))
+        {
+            Subjects = "Chemistry";
+            Toast.makeText(this, "Chemistry", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("Biology"))
+        {
+            Subjects = "Biology";
+            Toast.makeText(this, "Biology   ", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("English"))
+        {
+            Subjects = "English";
+            Toast.makeText(this, "English", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("Android"))
+        {
+            Subjects = "Android";
+            Toast.makeText(this, "Android", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("Java"))
+        {
+            Subjects = "Java";
+            Toast.makeText(this, "Java", Toast.LENGTH_SHORT).show();
+        }
+        else if (subjectSpinner.getSelectedItem().toString().trim().equals("C++"))
+        {
+            Subjects = "C++";
+            Toast.makeText(this, "c++", Toast.LENGTH_SHORT).show();
+        }*/
+         else
+        { //Subjects = (String) subjectSpinner.getSelectedItem().toString();
             uploadPicture();
            InsertData();
+            //Toast.makeText(this, "Subject "+Subjects, Toast.LENGTH_LONG).show();
 
 
         }
@@ -146,7 +203,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (task.isSuccessful())
                 {
                     RegisterUser user = new RegisterUser(Name,Email,Phone,Qulification,Address,experties,charges, profle_url);
-                    FirebaseDatabase.getInstance().getReference("RegisterUser")
+                    FirebaseDatabase.getInstance().getReference().child("RegisterUser")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

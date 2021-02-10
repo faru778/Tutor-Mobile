@@ -24,25 +24,6 @@
         android:onClick="back"
         app:srcCompat="@drawable/back2" />
 
-    <EditText
-        android:id="@+id/et_Search"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/search"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:foregroundGravity="center"
-        android:inputType="textPersonName"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textColor="#000000"
-        android:textColorHighlight="@color/black"
-        android:textColorHint="#000000" />
-
     <ImageView
         android:id="@+id/maths"
         android:layout_width="175dp"
@@ -289,35 +270,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="146dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="94dp"
         android:fontFamily="@font/abril_fatface"
         android:text="Our top subjects"
         android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="13dp"
-        android:text="Cancel"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="62dp"
-        android:text="What would you like to learn?"
         android:textSize="22sp"
         android:textStyle="bold" />
 

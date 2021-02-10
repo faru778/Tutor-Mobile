@@ -222,4 +222,10 @@
         app:backgroundTint="#F3022925"
         app:cornerRadius="20dp"
         app:elevation="20dp" />
+
+    <Spinner
+        android:id="@+id/subjectSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

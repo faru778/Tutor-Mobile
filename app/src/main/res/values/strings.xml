@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Tutor</string>
+
+    <string-array name = "Subjects">
+        <item>subjects</item>
+        <item>Maths</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Biology</item>
+        <item>English</item>
+        <item>Android</item>
+        <item>Java</item>
+        <item>C++</item>
+
+    </string-array>
+
 </resources>

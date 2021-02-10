@@ -28,25 +28,39 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void English(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void physics(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void chemistry(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void biology(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void Java(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void Android(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }public void Cplus_plus(View v)
     {
-
+        Intent intent = new Intent(HomeActivity.this, TutorList.class);
+        startActivity(intent);
+        finish();
     }
     public void back(View v) {
         startActivity(new Intent(HomeActivity.this, MainActivity.class));
